@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+.contenedor__h1{
+  font-family: var(--heading-h1-font-family);
+  font-size:  var(--heading-h1-font-size);
+  font-style: var(--heading-h1-font-style);
+  font-weight: var(--heading-h1-font-weight);
+  letter-spacing: var(--heading-h1-letter-spacing);
+  line-height: var(--heading-h1-line-height);
+  color: var(--color-primary);
+  text-align: center;
+  padding-top: 40px;
+}
+
+.contenedor_h4{
+  font-family: var(--heading-h4-font-family);
+  font-size:  var(--heading-h4-font-size);
+  font-style: var(--heading-h4-font-style);
+  font-weight: var(--heading-h4-font-weight);
+  letter-spacing: var(--heading-h4-letter-spacing);
+  line-height: var(--heading-h4-line-height);
+  color: var(--color-primary);
+  text-align: left;
+  padding-top: 40px;
+}
+
+body{
+  background-color: rgba(212, 218, 178, 1);
+  padding-bottom: 40px;
+}
+
+.titulo2{
+text-align: center;
+}
