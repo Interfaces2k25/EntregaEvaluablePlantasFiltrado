@@ -23,33 +23,6 @@
   color: var(--color-primary);
   text-align: left;
   padding-top: 40px;
-  padding-bottom: 40px;
-  text-decoration: underline;
-}
-
-.texto_mediano{
-  font-family: var(--text-medium-font-family);
-  font-size:  var(--text-medium-font-size);
-  font-style: var(--text-medium-font-style);
-  font-weight: var(--text-medium-font-weight);
-  letter-spacing: var(--text-medium-letter-spacing);
-  line-height: var(--text-medium-line-height);
-  color: black;
-  font-style: bold;
-  text-align: left;
-  padding-top: 20px;
-}
-
-.texto_grande{
-  font-family: var(--text-large-font-family);
-  font-size:  var(--text-large-font-size);
-  font-style: var(--text-large-font-style);
-  font-weight: var(--text-large-font-weight);
-  letter-spacing: var(--text-large-letter-spacing);
-  line-height: var(--text-large-line-height);
-  color: black;
-  text-align: left;
-  padding-top: 20px;
 }
 
 body{
