@@ -6,7 +6,7 @@
 - Todos los elementos muestran un foco visual claro.
 
 ![Tab producto](../imagenes/tab.png)
-![Tab enlace](/imagenes/tab2.png)
+![Tab enlace](../imagenes/tab2.png)
 
 
 
