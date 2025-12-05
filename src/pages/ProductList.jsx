@@ -35,7 +35,7 @@ function ProductList({ categories }) {
       <SearchBar
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
-        placeholder="Buscar películas por nombre..."
+        placeholder="Buscar plantas por nombre..."
       />
 
       {categories.map((category) => {
