@@ -30,7 +30,7 @@ function ProductList({ categories }) {
         <a href="/" className="text-black hover:underline ml-4 bg-white p-2 rounded-2xl flex justify-start ">← Volver al inicio</a>
       </button>
 
-      <h1 className="contenedor__h1">NUESTROS PRODUCTOS</h1>
+      <h1 className="text-3xl font-bold text-center text-[#474f23] pt-10">NUESTROS PRODUCTOS</h1>
 
       <SearchBar
         searchTerm={searchTerm}
@@ -46,7 +46,8 @@ function ProductList({ categories }) {
 
         return (
           <section key={category}>
-            <h2 className="contenedor_h4">{category}</h2>
+            <h2 className="text-lg font-semibold tracking-wide leading-snug text-[#474f23] text-left pt-10 underline">
+              {category}</h2>
 
             {productosFiltrados.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
