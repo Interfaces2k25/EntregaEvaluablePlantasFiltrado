@@ -9,7 +9,6 @@ import ProductList from "./pages/ProductList";
 import PlantDetail from "./pages/PlantDetail";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
-import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
@@ -32,11 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productlist" element={<ProductList categories={categories} />} />
           <Route path="/producto/:id" element={<PlantDetail />} />
-
-          <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-            <Route path="/admin" element={<Admin />} />
-          </Route>
-
+          <Route path="/admin"  element={<Admin isAuthenticated={isAuthenticated} />} />
         </Routes>
       </Layout>
       <Footer />
