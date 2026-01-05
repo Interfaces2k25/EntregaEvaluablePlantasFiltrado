@@ -10,7 +10,15 @@ import { useState } from "react";
  * @returns {JSX.Element} The rendered form for adding a plant.
  */
 function FormAddPlant(){
-    const [error, setError] = useState("");
+    const [errors, setErrors] = useState({
+        name: "",
+        price: "",
+        description: "",
+        category: "",
+        image: "",
+        information: "",
+      });
+      
 
     const [formData, setFormData] = useState({
         name: "",
@@ -33,32 +41,32 @@ function FormAddPlant(){
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        const newErrors = {};
+
         if(formData.name == null || formData.name === ""){
-            setError("Debes introducir un nombre")
-            return;
+            newErrors.name = "Debes introducir un nombre"
         }
-        if(formData.price < 0){
-            setError("El precio debe de ser mayor o igual a 0")
-            return;
+        if(formData.price < 0 || formData.price === ""){
+            newErrors.price = "El precio debe de ser mayor o igual a 0"
         }
         if(formData.description == null || formData.description === ""){
-            setError("Debes introducir una descripción")
-            return;
+            newErrors.description = "Debes introducir una descripción"
         }
         if(formData.category == null || formData.category === ""){
-            setError("Debes seleccionar una categoría")
-            return;
+            newErrors.category = "Debes seleccionar una categoría"
         }
         if(!formData.image || !formData.image.name.toLowerCase().endsWith(".png")){
-            setError("Debes importar una imagen")
-            return;
+            newErrors.image = "Debes importar una imagen .png"
         }
         if(formData.information == null || formData.information === ""){
-            setError("Debes introducir una información")
-            return;
+            newErrors.information = "Debes introducir una información"
         }
-        setError("");
-        console.log("Datos del formulario: ", formData);
+        setErrors(newErrors);
+        
+        if (Object.keys(newErrors).length === 0) {
+            console.log("Datos del formulario:", formData);
+          }
     }
 
     return(
@@ -83,11 +91,12 @@ function FormAddPlant(){
                     type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.name}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]">
                     </input>
+                    {errors.name && <p className="text-red-600">{errors.name}</p>}
                 </div>
 
                 <div className="mb-4">
@@ -101,11 +110,12 @@ function FormAddPlant(){
                     type="number"
                     value={formData.price}
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.price}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]">
                     </input>
+                    {errors.price && <p className="text-red-600">{errors.price}</p>}
                 </div>
 
                 <div className="mb-4">
@@ -119,11 +129,12 @@ function FormAddPlant(){
                     type="text"
                     value={formData.description}
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.description}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]">
                     </input>
+                    {errors.description && <p className="text-red-600">{errors.description}</p>}
                 </div>
 
                 <div className="mb-4">
@@ -137,16 +148,17 @@ function FormAddPlant(){
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.category}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]"
                     >
-                        <option value="option">Selecciona una opción</option>
+                        <option value="">Selecciona una opción</option>
                         <option value="medium/big">Plantas medianas/grandes</option>
                         <option value="small">Plantas pequeñas</option>
                         <option value="flower">Plantas con flores</option>
                     </select>
+                    {errors.category && <p className="text-red-600">{errors.category}</p>}
                 </div>
 
                 <div className="mb-4">
@@ -159,12 +171,13 @@ function FormAddPlant(){
                     id="image"
                     type="file"
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.image}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]"
                     >
                     </input>
+                    {errors.image && <p className="text-red-600">{errors.image}</p>}
                 </div>
 
                 <div className="mb-4">
@@ -178,11 +191,12 @@ function FormAddPlant(){
                     type="text"
                     value={formData.information}
                     onChange={handleChange}
-                    aria-invalid={!!error}
+                    aria-invalid={!!errors.information}
                     required
 
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(71,79,35,1)]">
                     </input>
+                    {errors.information && <p className="text-red-600">{errors.information}</p>}
                 </div>
 
                 <div>
@@ -192,9 +206,6 @@ function FormAddPlant(){
                     >
                         Guardar
                     </button>
-                    <div>
-                        {error && <p className="px-3 py-2 mt-2 text-red-700 bg-red-100 rounded-lg">{error}</p>}
-                    </div>
                 </div>
             </form>
         </div>

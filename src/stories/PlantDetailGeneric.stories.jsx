@@ -12,7 +12,16 @@ export default {
     docs: {
       description: {
         component:
-          "Documentación narrativa: Componente que muestra el detalle completo de una planta, incluyendo imagen, nombre, precio, descripción e información adicional.",
+          `Documentación narrativa:
+        El componente PlantDetailGeneric muestra la información completa de una planta.
+
+        Se utiliza en la vista de detalle del producto y presenta datos como la imagen,
+        el nombre, el precio, la descripción y la información adicional.
+
+        Este componente recibe un objeto plant como prop, lo que permite reutilizarlo
+        con distintas plantas sin duplicar lógica. Es especialmente útil para mostrar
+        listados completos, filtros por categoría o vistas editables en Storybook.
+    `,
       },
     },
   },
