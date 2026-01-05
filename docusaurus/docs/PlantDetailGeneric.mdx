@@ -1,3 +1,6 @@
+import PlantDetailGeneric from '@site/src/components/PlantDetailGeneric';
+
+
 # Detalle de producto
 
 El componente **PlantDetailGeneric** permite visualizar el **detalle completo de un producto**
@@ -5,6 +8,17 @@ del catálogo de plantas.
 
 Esta vista está pensada para que el usuario pueda consultar toda la información
 relevante de una planta seleccionada desde el listado de productos.
+
+<PlantDetailGeneric
+  plant={{
+    id: 1,
+    name: "KALANCHOE",
+    description: "Planta con flores decorativas de fácil mantenimiento.",
+    price: "12,99 €",
+    image: "/img/kalanchoe.avif",
+    information: "Colocar en un lugar luminoso y regar moderadamente."
+  }}
+/>
 
 ---
 

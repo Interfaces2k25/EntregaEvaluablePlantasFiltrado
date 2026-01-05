@@ -1,4 +1,4 @@
-import Card from "../../../src/components/Card";
+import CardDoc from '../src/components/CardDoc';
 import SearchBar from "../../../src/components/SearchBar";
 import { useMemo, useState } from "react";
 
@@ -53,7 +53,6 @@ function ProductListGeneric({ products = [], categories = [] }) {
                     image={p.image}
                     name={p.name}
                     price={p.price}
-                    to={`/producto/${p.id}`}
                   >
                     {p.description}
                   </Card>
